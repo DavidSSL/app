@@ -88,7 +88,9 @@
     <Compile Include="basic_container\IPickTheCtorForAType.cs" />
     <Compile Include="basic_container\SimpleFactory.cs" />
     <Compile Include="bus\EventBus.cs" />
+    <Compile Include="bus\IFindMessageSubscribers.cs" />
     <Compile Include="bus\IPublishEvents.cs" />
+    <Compile Include="bus\IHandle.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="container\Dependencies.cs" />
     <Compile Include="container\IProvideAccessToTheContainerCreatedAtStartup.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="startup\StartupServices.cs" />
     <Compile Include="startup\StepFactory.cs" />
     <Compile Include="validation\IValidateAn.cs" />
+    <Compile Include="web\application\catalog_browsing\PersistSubmittedOrder.cs" />
     <Compile Include="web\application\catalog_browsing\SubmitOrder.cs" />
     <Compile Include="web\application\catalog_browsing\DeparmentsInDepartmentInput.cs" />
     <Compile Include="web\application\catalog_browsing\MainDepartmentLineItem.cs" />

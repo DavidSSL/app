@@ -1,45 +1,49 @@
-﻿ using System.Web.UI;
- using app.bus;
- using Machine.Specifications;
- using developwithpassion.specifications.rhinomocks;
- using developwithpassion.specifications.extensions;
+﻿using System.Collections.Generic;
+using app.bus;
+using developwithpassion.specifications.extensions;
+using developwithpassion.specifications.rhinomocks;
+using Machine.Specifications;
 
 namespace app.specs
-{  
-  [Subject(typeof(EventBus))]  
+{
+  [Subject(typeof(EventBus))]
   public class EventBusSpecs
   {
-    public abstract class concern : Observes<IPublishEvents,
-      EventBus>
+    public abstract class concern : Observes<IPublishEvents, EventBus>
     {
-        
     }
 
-   
     public class when_an_event_is_published : concern
     {
-        Establish context = () =>
-        {
-            the_message = new SomeMessage();
+      Establish context = () =>
+      {
+        the_message = new SomeMessage();
+        handler = fake.an<IHandle<SomeMessage>>();
 
-            subscribers = depends.on<IReceiveEvents>();
-        };
+        subscriber_registry = depends.on<IFindMessageSubscribers>();
+        IList<IHandle<SomeMessage> > handlers = new List<IHandle<SomeMessage>>{handler};
 
-        Because of = () => sut.publish(the_message);
+        subscriber_registry.setup(x => x.get_all_handlers_for<SomeMessage>())
+          .Return(handlers);
+          
+      };
 
-        It should_notify_its_subscribers = () =>
-            subscribers.received(x => x.Notify<Message>(the_message));
+      Because of = () => sut.publish(the_message);
 
-        static SomeMessage the_message;
+      It should_notify_its_subscribers = () =>
+        handler.received(x => x.handle(the_message));
+
+      static SomeMessage the_message;
+      static IFindMessageSubscribers subscriber_registry;
+      static IHandle<SomeMessage> handler;
     }
 
     public class SomeMessage
     {
     }
-  }
 
-    public interface IReceiveEvents
+    public class Other
     {
-        void Notify<Message>(Message message);
     }
+  }
 }
