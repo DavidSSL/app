@@ -77,7 +77,78 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="basic_container\AutomaticallyWiringFactory.cs" />
+    <Compile Include="basic_container\Container.cs" />
+    <Compile Include="basic_container\DependencyFactories.cs" />
+    <Compile Include="basic_container\IBuildDependencyFactories.cs" />
+    <Compile Include="basic_container\ICreateAFactoryWhenOneIsMissing.cs" />
+    <Compile Include="basic_container\ICreateAnErrorWhenCreationFails.cs" />
+    <Compile Include="basic_container\ICreateOneDependency .cs" />
+    <Compile Include="basic_container\IGetTheFactoryForADependency.cs" />
+    <Compile Include="basic_container\IPickTheCtorForAType.cs" />
+    <Compile Include="basic_container\SimpleFactory.cs" />
+    <Compile Include="bus\EventBus.cs" />
+    <Compile Include="bus\IFindMessageSubscribers.cs" />
+    <Compile Include="bus\IPublishEvents.cs" />
+    <Compile Include="bus\IHandle.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="container\Dependencies.cs" />
+    <Compile Include="container\IProvideAccessToTheContainerCreatedAtStartup.cs" />
+    <Compile Include="container\IFetchDependencies.cs" />
+    <Compile Include="core\CombinedAction.cs" />
+    <Compile Include="core\ICombineActions.cs" />
+    <Compile Include="core\IRun.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="startup\ConfiguringRoutes.cs" />
+    <Compile Include="startup\IBuildAStartupChain.cs" />
+    <Compile Include="startup\ICreateAStartupChain.cs" />
+    <Compile Include="startup\ICreateAStartupStep.cs" />
+    <Compile Include="startup\InitializingTheContainer.cs" />
+    <Compile Include="startup\IProvideStartupServices.cs" />
+    <Compile Include="startup\IRunAStartupStep.cs" />
+    <Compile Include="startup\RegisterWebComponents.cs" />
+    <Compile Include="startup\StartTheApp.cs" />
+    <Compile Include="startup\Startup.cs" />
+    <Compile Include="startup\StartupItems.cs" />
+    <Compile Include="startup\StartupPipelineBuilder.cs" />
+    <Compile Include="startup\StartupServices.cs" />
+    <Compile Include="startup\StepFactory.cs" />
+    <Compile Include="validation\IValidateAn.cs" />
+    <Compile Include="web\application\catalog_browsing\PersistSubmittedOrder.cs" />
+    <Compile Include="web\application\catalog_browsing\SubmitOrder.cs" />
+    <Compile Include="web\application\catalog_browsing\DeparmentsInDepartmentInput.cs" />
+    <Compile Include="web\application\catalog_browsing\MainDepartmentLineItem.cs" />
+    <Compile Include="web\application\catalog_browsing\ProductInfoItem.cs" />
+    <Compile Include="web\application\catalog_browsing\ProductsInDepartmentInput.cs" />
+    <Compile Include="web\application\catalog_browsing\ViewA.cs" />
+    <Compile Include="web\application\orders\SubmitOrderInput.cs" />
+    <Compile Include="web\aspnet\AspnetRequestHandler.cs" />
+    <Compile Include="web\aspnet\ICreatePageInstances.cs" />
+    <Compile Include="web\aspnet\ICreateViewsThatCanDisplayAReport.cs" />
+    <Compile Include="web\aspnet\IDisplayA.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\aspnet\IFindPathsToViews.cs" />
+    <Compile Include="web\aspnet\IGetTheCurrentHttpContext.cs" />
+    <Compile Include="web\aspnet\stubs\StubPathRegistry.cs" />
+    <Compile Include="web\aspnet\stubs\StubSetOfCommands.cs" />
+    <Compile Include="web\aspnet\stubs\WebStubs.cs" />
+    <Compile Include="web\aspnet\WebFormDisplayEngine.cs" />
+    <Compile Include="web\aspnet\WebFormFactory.cs" />
+    <Compile Include="web\core\CommandRegistry.cs" />
+    <Compile Include="web\core\FrontController.cs" />
+    <Compile Include="web\core\ICreateACommandWhenOneCantBeFound.cs" />
+    <Compile Include="web\core\ICreateAControllerRequest.cs" />
+    <Compile Include="web\core\IDisplayInformation.cs" />
+    <Compile Include="web\core\IFetchData.cs" />
+    <Compile Include="web\core\IFindCommandsThatCanProcessRequests.cs" />
+    <Compile Include="web\core\IMatchARequest.cs" />
+    <Compile Include="web\core\IProcessOneRequest.cs" />
+    <Compile Include="web\core\IProcessWebRequests.cs" />
+    <Compile Include="web\core\IProvideRequestDetails.cs" />
+    <Compile Include="web\core\ISupportAUserStory.cs" />
+    <Compile Include="web\core\RequestCommand.cs" />
+    <Compile Include="web\core\ValidatingFeature.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

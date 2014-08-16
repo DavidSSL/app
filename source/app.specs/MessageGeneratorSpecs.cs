@@ -27,5 +27,6 @@ namespace app.specs
             static string result;
             static string message;
         }
+
     }
 }

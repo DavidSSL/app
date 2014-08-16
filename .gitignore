@@ -34,3 +34,7 @@ build_output
 kill_runner_processes.bat
 source/app.web.ui/web.*.config
 *.settings
+packages
+!/packages/repositories.config
+our_custom_config.txt
+bin/*

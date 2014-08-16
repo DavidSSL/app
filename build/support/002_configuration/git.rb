@@ -2,7 +2,26 @@ configs ={
   :git => {
     :provider => 'github',
     :user => 'philips-august-2014',
-    :remotes => potentially_change("remotes",__FILE__),
+    :remotes => [
+      "fangliuwh",
+      "DarrenVine",
+      "picbeats",
+      "iainm42",
+      "trixi1979",
+      "cbenien",
+      "vijujo",
+      "CADI",
+      "DavidSSL",
+      "marccarver",
+      "jensmarschner",
+      "ericb81",
+      "stift",
+      "vphilomin",
+      "niladri-sekhar",
+      "vikram-mandyam",
+      "ajitkumarbiradar",
+      "dhirajnayak"
+    ],
     :repo => 'app' 
   }
 }

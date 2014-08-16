@@ -113,7 +113,31 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspnetRequestHandlerSpecs.cs" />
+    <Compile Include="AutomaticallyWiringFactorySpecs.cs" />
+    <Compile Include="EventBusSpecs.cs" />
+    <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="CombinedActionSpecs.cs" />
+    <Compile Include="CommandRegistrySpecs.cs" />
+    <Compile Include="SubmitOrderSpecs.cs" />
+    <Compile Include="ContainerSpecs.cs" />
+    <Compile Include="DependenciesSpecs.cs" />
+    <Compile Include="FrontControllerSpecs.cs" />
+    <Compile Include="DependencyFactoriesSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="RequestCommandSpecs.cs" />
+    <Compile Include="SimpleFactorySpecs.cs" />
+    <Compile Include="StartTheAppSpecs.cs" />
+    <Compile Include="StartupItemsSpecs.cs" />
+    <Compile Include="StartupPipelineBuilderSpecs.cs" />
+    <Compile Include="StartupServicesSpecs.cs" />
+    <Compile Include="StartupSpecs.cs" />
+    <Compile Include="StepFactorySpecs.cs" />
+    <Compile Include="utility\ObjectFactory.cs" />
+    <Compile Include="ValidatingFeatureSpecs.cs" />
+    <Compile Include="ViewSpecs.cs" />
+    <Compile Include="WebFormDisplayEngineSpecs.cs" />
+    <Compile Include="WebFormFactorySpecs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -124,7 +148,10 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>cd $(SolutionDir)
-rake copy_config_files</PostBuildEvent>
+    <PostBuildEvent>cd $(SolutionDir)</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>
